@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="carousel.css" />
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">All Projects</a>
+    </nav>
+  </header>
+
+  <!-- Project Slides -->
+  <div class="project-page active slide-in-right">
+    <div class="project-image">
+      <img src="assets/images/img1.png" alt="Hotel Booking App">
+    </div>
+    <div class="project-description">
+      <h2>Hotel Booking App</h2>
+      <p>Real-time room availability and secure user login using Firebase.</p>
+      <p><strong>Tech Stack:</strong> Next.js, React, Tailwind CSS, Firebase, Node.js</p>
+      <a href="https://github.com/tejasrinerusu/hotel-booking" target="_blank" class="github-btn">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-page">
+    <div class="project-image">
+      <img src="assets/images/img2.jpg" alt="Recipe Tracker">
+    </div>
+    <div class="project-description">
+      <h2>Recipe Tracker</h2>
+      <p>Secure REST API with JWT authentication and role-based access control.</p>
+      <p><strong>Tools:</strong> Node.js, MongoDB, Express.js</p>
+      <a href="https://github.com/tejasrinerusu/recipe-tracker" target="_blank" class="github-btn">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-page">
+    <div class="project-image">
+      <img src="assets/images/img2.png" alt="Disease Prediction">
+    </div>
+    <div class="project-description">
+      <h2>Disease Prediction System</h2>
+      <p>90% accuracy using SVM to predict diseases like diabetes, heart disease, Parkinson’s.</p>
+      <p><strong>Tools:</strong> Python, Scikit-learn, Flask, SQLite, Docker</p>
+      <a href="https://github.com/tejasrinerusu/disease-prediction" target="_blank" class="github-btn">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-page">
+    <div class="project-image">
+      <img src="assets/images/img3.png" alt="Hate Speech Detection">
+    </div>
+    <div class="project-description">
+      <h2>Hate Speech Detection</h2>
+      <p>94.71% accuracy using XGBoost and Count Vectorization.</p>
+      <p><strong>Tools:</strong> Python, FastAPI, MongoDB, XGBoost</p>
+      <a href="https://github.com/tejasrinerusu/hate-speech-detection" target="_blank" class="github-btn">View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <span class="nav-arrow left" onclick="changeProject(-1)">&#8592;</span>
+  <span class="nav-arrow right" onclick="changeProject(1)">&#8594;</span>
+
+  <script>
+    const slides = document.querySelectorAll('.project-page');
+    let currentIndex = 0;
+
+    function changeProject(direction) {
+      const currentSlide = slides[currentIndex];
+      currentSlide.classList.remove('active', 'slide-in-left', 'slide-in-right');
+
+      currentIndex = (currentIndex + direction + slides.length) % slides.length;
+
+      const nextSlide = slides[currentIndex];
+      const animationClass = direction === 1 ? 'slide-in-right' : 'slide-in-left';
+
+      setTimeout(() => {
+        nextSlide.classList.add('active', animationClass);
+      }, 50);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "ArrowRight") changeProject(1);
+      if (e.key === "ArrowLeft") changeProject(-1);
+    });
+  </script>
+</body>
+</html>
