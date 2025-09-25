@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tejasri's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <div class="hero-container">
+    <div class="hero-text slide-in">
+      <p class="greeting">Hello 👋</p>
+      <h1 class="name">NERUSU TEJASRI</h1>
+      <h2 class="designation">Software Developer</h2>
+      <p class="info-line">I love crafting beautiful and functional digital experiences that solve real-world problems.</p>
+    </div>
+
+    <div class="hero-image slide-in delay">
+      <img src="Unknown-1.jpeg" alt="Tejasri's Photo" />
+    </div>
+  </div>
+
+  <!-- Animation Script -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.slide-in').forEach((el, i) => {
+        setTimeout(() => el.classList.add('show'), i * 500);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
